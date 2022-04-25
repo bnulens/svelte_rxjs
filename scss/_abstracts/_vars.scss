@@ -1,0 +1,25 @@
+// FONT SIZES:
+$large-font: 1.5rem;
+$medium-font: 1rem;
+$small-font: 0.5rem;
+
+// Generic colors
+$grey-700: hsl(0, 6%, 13%);
+$grey-500: hsl(0, 1%, 23%);
+$grey-300: hsl(0, 0%, 59%);
+$grey-100: hsl(0, 0%, 75%);
+
+$danger: hsl(336, 100%, 28%);
+$ok: hsl(137, 100%, 31%);
+$warning: hsl(39, 97%, 45%);
+
+$whitey: hsl(0, 0%, 95%);
+
+// Background colors 
+$dark-bg: hsl(242, 46%, 13%);
+$light-bg: hsl(240, 32%, 21%);
+$accent: hsl(271, 66%, 27%);
+
+// Text colors
+$dark-text: $grey-700;
+$light-text: $whitey;

@@ -1,0 +1,24 @@
+@use '../../_abstracts/vars' as vars;
+
+.app-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    
+    h1 {
+        color: vars.$light-text;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 50%;
+        width: 100vw;
+        height: 80px;
+        transform: translateX(-50%);
+        background-color: vars.$accent;
+        z-index: -1;
+    }
+}

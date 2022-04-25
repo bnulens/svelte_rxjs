@@ -1,0 +1,20 @@
+@use '../../_abstracts/vars' as vars;
+
+@mixin defineH1 {
+    font-weight: 600;
+    font-size: clamp(vars.$small-font, 8vw, vars.$large-font )
+}
+
+@mixin defineMainSectionTitle {
+    color: vars.$whitey;
+    font-weight: 200;
+    font-size: vars.$large-font;
+}
+
+h1.main-title {
+    @include defineH1;
+}
+
+h2.main-section-title {
+    @include defineMainSectionTitle;
+}
