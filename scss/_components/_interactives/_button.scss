@@ -1,0 +1,94 @@
+@use '../../_abstracts/vars' as vars;
+
+// Mixins
+@mixin defineActionButton($text, $main-color, $text-color) {
+    display: block;
+    position: relative;
+    padding: 9px 12px;
+    border: 1px solid $main-color;
+    border-radius: 8px;
+    background-color: transparent;
+    color: $main-color;
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+
+    &::before {
+        display: block;
+        content: $text;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+
+    &:hover {
+        border: none;
+        background-color: $main-color;
+        color: $text-color;
+    }
+}
+
+@mixin defineActuatorButton($sign, $main-color) {
+    display: block;
+    position: relative;
+    padding: 8px;
+    color: $main-color;
+    border: 1px solid $main-color;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+
+    &::before {
+        content: $sign;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width:  clamp(8px, 100%, 12px);
+        height: clamp(8px, 100%, 12px);
+        aspect-ratio: 1 /1;
+    }
+}
+
+
+// Element selectors
+.btn-cancel {
+    @include defineActionButton("Cancel", vars.$danger, vars.$light-text);
+}
+.btn-approve {
+    @include defineActionButton("Ok", vars.$ok, vars.$light-text);
+}
+.btn-warning {
+    @include defineActionButton("Warning", vars.$warning, vars.$light-text);
+}
+
+// Dark mode
+.btn-add.dark {
+    @include defineActuatorButton("+",vars.$light-text,);
+}
+.btn-sub.dark {
+    @include defineActuatorButton("-", vars.$light-text,);
+}
+.btn-left.dark {
+    @include defineActuatorButton("\003C", vars.$light-text);
+}
+.btn-right.dark {
+    @include defineActuatorButton("\003E",vars.$light-text);
+}
+
+// Light mode
+.btn-add.light {
+    @include defineActuatorButton("+", vars.$dark-text);
+}
+.btn-sub.light {
+    @include defineActuatorButton( "-", vars.$dark-text,);
+}
+.btn-left.light {
+    @include defineActuatorButton( "\003C", vars.$dark-text,);
+}
+.btn-right.light {
+    @include defineActuatorButton( "\003E", vars.$dark-text,);
+}
