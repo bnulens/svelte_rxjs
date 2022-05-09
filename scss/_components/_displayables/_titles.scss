@@ -6,15 +6,14 @@
 }
 
 @mixin defineMainSectionTitle {
-    color: vars.$whitey;
     font-weight: 200;
     font-size: vars.$large-font;
 }
 
-h1.main-title {
+h1.title-main {
     @include defineH1;
 }
 
-h2.main-section-title {
+h2.title-sub-section {
     @include defineMainSectionTitle;
 }
